@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println(product1.displayInfo());
 
-        Product product2 = new Product("Бутылка с молоком", 120.25);
+        Product product2 = new Product("Молоко коровка из Кореновки", 120.25);
         product2.param2 = "..";
         System.out.println(product2.displayInfo());
 
@@ -25,11 +25,11 @@ public class Main {
         System.out.println(product3.displayInfo());
         product3.setPrice(10);
 
-        Product bottleOfWater1 = new BottleOfWater("Бутылка1", 100, 2);
-        Product bottleOfMilk1 = new BottleOfMilk("Молоко", 200, 1, 10);
-        Product bottleOfWater2 = new BottleOfWater("Бутылка2", 100, 1);
-        Product bottleOfWater3 = new BottleOfWater("Бутылка3", 100, 2);
-        Product bottleOfWater4 = new BottleOfWater("Бутылка3", 100, 2);
+        Product bottleOfWater1 = new BottleOfWater("Святой источник", 100, 2);
+        Product bottleOfMilk1 = new BottleOfMilk("Молоко коровка из Кореновки", 200, 1, 10);
+        Product bottleOfWater2 = new BottleOfWater("Святой источник", 100, 1);
+        Product bottleOfWater3 = new BottleOfWater("Святой источник", 100, 2);
+        Product bottleOfWater4 = new BottleOfWater("Святой источник", 100, 2);
         Product snack1 = new Snack("Snickers", 100, 70);
         Product snack2 = new Snack("Snickers", 200, 140);
         Product snack3 = new Snack("Picnic", 220, 180);
@@ -50,7 +50,7 @@ public class Main {
 
         VendingMachine vendingMachine = new VendingMachine(products);
 
-        BottleOfWater bottleOfWaterRes = vendingMachine.getBottleOfWater("Бутылка2", 1);
+        BottleOfWater bottleOfWaterRes = vendingMachine.getBottleOfWater("Святой источник", 1);
         if (bottleOfWaterRes != null){
             System.out.println("Вы купили: ");
             System.out.println(bottleOfWaterRes.displayInfo());
