@@ -1,4 +1,4 @@
-package ru.geekbrains.task1;
+package Semminar2Oop;
 
 public class Track implements Obstacle {
 
