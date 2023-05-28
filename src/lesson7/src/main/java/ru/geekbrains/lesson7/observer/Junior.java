@@ -1,25 +1,38 @@
 package ru.geekbrains.lesson7.observer;
 
-public class Junior implements Observer{
+public class Junior implements Observer {
 
     private String name;
+    private boolean knowledgeJava;
     private double salary;
 
-    public Junior(String name) {
+    public Junior(String name, boolean knowledgeJava) {
         this.name = name;
-        salary = 7000;
+        this.knowledgeJava = knowledgeJava;
+        salary = 5000;
     }
 
     @Override
-    public void receiveOffer(String nameCompany,String nameJobs, double salary) {
-        if (this.salary < salary){
+    public boolean hasJavaSkills() {
+        return knowledgeJava;
+    }
+
+    @Override
+    public void receiveOffer(String nameCompany, String nameJobs, boolean knowledgeJava, double salary) {
+        if (nameJobs.equalsIgnoreCase("Уборщик") && !knowledgeJava && salary > this.salary) {
             System.out.printf("Junior %s >>> Мне нужна эта работа! [%s(%s) - %f]\n",
-                    name, nameCompany,nameJobs, salary);
+                    name, nameCompany, nameJobs, salary);
             this.salary = salary;
-        }
-        else{
+        } else if (!nameJobs.equalsIgnoreCase("Уборщик") && knowledgeJava && salary > this.salary) {
+            System.out.printf("Junior %s >>> Мне нужна эта работа! [%s(%s) - %f]\n",
+                    name, nameCompany, nameJobs, salary);
+            this.salary = salary;
+        } else {
             System.out.printf("Junior %s >>> Я найду работу получше! [%s(%s) - %f]\n",
-                    name, nameCompany,nameJobs, salary);
+                    name, nameCompany, nameJobs, salary);
         }
     }
+
+
+
 }

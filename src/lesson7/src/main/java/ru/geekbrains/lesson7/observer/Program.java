@@ -12,16 +12,16 @@ public class Program {
     public static void main(String[] args) {
 
         JobAgency jobAgency = new JobAgency();
-        Company geekBrains = new Company("GeekBrains", "Преподаватель", 70000, jobAgency);
-        Company google = new Company("Google", "Уборщик", 50000, jobAgency);
-        Company google1 = new Company("Google", "Программист Java", 100000, jobAgency);
-        Company yandex = new Company("Yandex","Программист Java",120000, jobAgency);
+        Company geekBrains = new Company("GeekBrains", "Преподаватель", true, 80000, jobAgency);
+        Company google = new Company("Google", "Уборщик", false,50000, jobAgency);
+        Company google1 = new Company("Google", "Программист Java",true, 100000, jobAgency);
+        Company yandex = new Company("Yandex","Программист Java", true,120000, jobAgency);
 
-        Master ivanov = new Master("Ivanov");
-        Master petrov = new Master("Petrov");
-        Student sidorov = new Student("Sidorov");
-        Junior Fomaf = new Junior("Fomaf");
-        Junior Ortega = new Junior("Ortega");
+        Master ivanov = new Master("Ivanov", true);
+        Master petrov = new Master("Petrov", false);
+        Student sidorov = new Student("Sidorov" , true);
+        Junior Fomaf = new Junior("Fomaf", false);
+        Junior Ortega = new Junior("Ortega", true);
 
         jobAgency.registerObserver(ivanov);
         jobAgency.registerObserver(petrov);

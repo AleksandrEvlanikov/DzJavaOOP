@@ -1,7 +1,7 @@
 package ru.geekbrains.lesson7.observer;
 
 public interface Observer {
-
-    void receiveOffer(String nameCompany, String nameJobs, double salary);
+    boolean hasJavaSkills();
+    void receiveOffer(String nameCompany, String nameJobs, boolean knowledgeJava, double salary);
 
 }
